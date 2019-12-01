@@ -7,11 +7,11 @@ import java.util.HashMap;
 
 public class AllStringsCounterTest {
 
-    StringCountingOperations allStringsCounter = new StringCountingOperations();
+    StringNamesOperator allStringsCounter = new StringNamesOperator();
 
     @Before()
     public void onBefore() {
-        allStringsCounter = new StringCountingOperations();
+        allStringsCounter = new StringNamesOperator();
     }
 
     @Test()

@@ -6,11 +6,11 @@ import java.util.ArrayList;
 
 public class CountMaxStringTest {
 
-    StringCountingOperations maxStringCounter = new StringCountingOperations();
+    StringNamesOperator maxStringCounter = new StringNamesOperator();
 
     @Before()
     public void onBefore() {
-        maxStringCounter = new StringCountingOperations();
+        maxStringCounter = new StringNamesOperator();
     }
 
     @Test()

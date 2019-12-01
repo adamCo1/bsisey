@@ -6,11 +6,11 @@ import java.util.ArrayList;
 
 public class AllIncludeStringTest {
 
-    StringCountingOperations includeNames ;
+    StringNamesOperator includeNames ;
 
     @Before()
     public void onBefore() {
-        includeNames = new StringCountingOperations();
+        includeNames = new StringNamesOperator();
     }
 
     @Test()

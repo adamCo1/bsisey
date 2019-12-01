@@ -4,13 +4,13 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 
-public class StringCountingOperationsTest {
+public class StringNamesOperatorTest {
 
-    StringCountingOperations specificStringCounter ;
+    StringNamesOperator specificStringCounter ;
 
     @Before()
     public void onBefore() {
-        specificStringCounter = new StringCountingOperations();
+        specificStringCounter = new StringNamesOperator();
     }
 
     @Test
@@ -24,7 +24,7 @@ public class StringCountingOperationsTest {
             listOfAllNames.add(name);
         }
 
-        Assert.assertEquals(countOfString, specificStringCounter.countStringOnList(listOfAllNames, toCount));
+        Assert.assertEquals(countOfString, specificStringCounter.countSpecificString(listOfAllNames, toCount));
     }
 
     @Test
@@ -38,7 +38,7 @@ public class StringCountingOperationsTest {
             listOfAllNames.add(name);
         }
 
-        Assert.assertEquals(countOfString, specificStringCounter.countStringOnList(listOfAllNames, toCount));
+        Assert.assertEquals(countOfString, specificStringCounter.countSpecificString(listOfAllNames, toCount));
     }
 
     @Test
@@ -47,7 +47,7 @@ public class StringCountingOperationsTest {
         String toCount = "a";
         ArrayList<String> listOfAllNames = new ArrayList<String>();
 
-        Assert.assertEquals(countOfString, specificStringCounter.countStringOnList(listOfAllNames, toCount));
+        Assert.assertEquals(countOfString, specificStringCounter.countSpecificString(listOfAllNames, toCount));
     }
 
     @Test(expected = NullPointerException.class)
@@ -56,6 +56,6 @@ public class StringCountingOperationsTest {
         String toCount = "test";
         ArrayList<String> listOfAllNames = null ;
 
-        Assert.assertEquals(countOfString, specificStringCounter.countStringOnList(listOfAllNames, toCount));
+        Assert.assertEquals(countOfString, specificStringCounter.countSpecificString(listOfAllNames, toCount));
     }
 }

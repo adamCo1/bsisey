@@ -1,19 +1,17 @@
 import org.apache.commons.lang3.StringUtils;
 
-import java.lang.reflect.Array;
-import java.net.Inet4Address;
 import java.util.*;
 
-public class StringCountingOperations {
+public class StringNamesOperator {
 
     private HashMap<String, Integer> countOfStrings;
     private int maxCount = 0;
 
-    public StringCountingOperations() {
+    public StringNamesOperator() {
         initializeCountMap();
     }
 
-    public int countStringOnList(ArrayList<String> listOfAllNames, String stringToCount) throws NullPointerException{
+    public int countSpecificString(ArrayList<String> listOfAllNames, String stringToCount) throws NullPointerException{
         int countOfString = 0;
         for (String name:
              listOfAllNames) {
