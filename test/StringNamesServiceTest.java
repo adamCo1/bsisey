@@ -11,7 +11,7 @@ public class StringNamesServiceTest {
 
     @Test()
     public void callSpecificStringMethod() throws Exception{
-        String[] input = new String[]{"CountSpecificString", "test"} ;
+        String[] input = new String[]{"CountSpecificString", "a"} ;
         stringNamesService.performOnNames(input);
         verify(mockedOperator).countSpecificString((ArrayList<String>) anyObject(), anyString());
     }

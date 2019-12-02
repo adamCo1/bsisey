@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 
-public class StringNamesOperatorTest {
+public class CountSpecificStringTest {
 
     StringNamesOperator specificStringCounter ;
 
@@ -29,7 +29,7 @@ public class StringNamesOperatorTest {
 
     @Test
     public void countStringOnListMixedLocations() {
-        int countOfString = 5;
+        int countOfString = 4;
         String toCount = "da";
         String[] names = new String[]{"daAdam", "Bonyda", "Damada", "Galamda"};
         ArrayList<String> listOfAllNames = new ArrayList<String>();
@@ -46,6 +46,20 @@ public class StringNamesOperatorTest {
         int countOfString = 0;
         String toCount = "a";
         ArrayList<String> listOfAllNames = new ArrayList<String>();
+
+        Assert.assertEquals(countOfString, specificStringCounter.countSpecificString(listOfAllNames, toCount));
+    }
+
+    @Test()
+    public void countWithCapitalLetters() {
+        int countOfString = 2;
+        String toCount = "Test";
+        String[] names = new String[]{"TestiTest", "test", "testtsetettest", "Test"};
+        ArrayList<String> listOfAllNames = new ArrayList<String>();
+        for (String name:
+                names) {
+            listOfAllNames.add(name);
+        }
 
         Assert.assertEquals(countOfString, specificStringCounter.countSpecificString(listOfAllNames, toCount));
     }

@@ -21,8 +21,9 @@ public class StringNamesOperator {
     }
 
     private int countInCommon(String name, String stringToCount) {
-        int countInName = StringUtils.countMatches(name, stringToCount);
-        return countInName;
+        int stringIndex = name.indexOf(stringToCount);
+        int count = (stringIndex >= 0) ? 1 : 0 ;
+        return count;
     }
 
     public HashMap<String, Integer> countAllStrings(ArrayList<String> listOfAllNames, int lengthToCount) throws NullPointerException{
@@ -73,12 +74,22 @@ public class StringNamesOperator {
     }
 
     public ArrayList<String> countMaxString(ArrayList<String> listOfNames, int length) throws NullPointerException {
+        listOfNames = getListWithoutCapitals(listOfNames);
         ArrayList<String> allMatchingStrings = new ArrayList<String>();
         HashMap<String, Integer> wantedLengthNames = new HashMap<String, Integer>();
         this.countAllStrings(listOfNames, length);
         wantedLengthNames = this.getMapAllStringsOfSize(length);
         allMatchingStrings = this.getMaxCountStrings(wantedLengthNames);
         return allMatchingStrings;
+    }
+
+    private ArrayList<String> getListWithoutCapitals(ArrayList<String> listOfNames){
+        ArrayList<String> listWithoutCapitals = new ArrayList<>();
+        for (String name:
+             listOfNames) {
+            listWithoutCapitals.add(name.toLowerCase());
+        }
+        return listWithoutCapitals;
     }
 
     private HashMap<String, Integer> getMapAllStringsOfSize(int length) {
@@ -118,6 +129,7 @@ public class StringNamesOperator {
     }
 
     public ArrayList<String> allIncludesString(ArrayList<String> listOfNames, String pattern)throws NullPointerException {
+        listOfNames = getListWithoutCapitals(listOfNames);
         ArrayList<String> foundNames = new ArrayList<String>();
         for (String name:
              listOfNames) {

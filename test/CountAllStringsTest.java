@@ -5,7 +5,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class AllStringsCounterTest {
+public class CountAllStringsTest {
 
     StringNamesOperator allStringsCounter = new StringNamesOperator();
 

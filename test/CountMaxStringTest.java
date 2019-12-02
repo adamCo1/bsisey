@@ -94,6 +94,18 @@ public class CountMaxStringTest {
         Assert.assertEquals(expectedNames, maxStringCounter.countMaxString(listOfAllNames, stringLength));
     }
 
+    @Test()
+    public void exampleFromAssignment() {
+        int stringLength = 1;
+        ArrayList<String> listOfAllNames = new ArrayList<String>();
+        ArrayList<String> expectedNames = new ArrayList<String>();
+        listOfAllNames.add("Yarden");
+        listOfAllNames.add("Assaf");
+        expectedNames.add("a");
+
+        Assert.assertEquals(expectedNames, maxStringCounter.countMaxString(listOfAllNames, stringLength));
+    }
+
     @Test(expected = NullPointerException.class)
     public void countMaxStringOnNull() {
         int maxLength = 2;

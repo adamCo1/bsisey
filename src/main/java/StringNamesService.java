@@ -1,4 +1,5 @@
-import java.util.ArrayList;
+import java.lang.reflect.Array;
+import java.util.*;
 
 public class StringNamesService {
 
@@ -12,22 +13,47 @@ public class StringNamesService {
     }
 
     public void performOnNames(String[] action) throws Exception {
-
+        ArrayList<String> countList ;
+        HashMap<String, Integer> countmap ;
+        int count = 0;
         try{
             String functionName = getVariable(action, functionNameIndex);
             String functionArgument = getVariable(action, variableIndex);
             if(functionName.equals("CountSpecificString")){
-                this.operator.countSpecificString(listOfNames, functionArgument);
+                count = this.operator.countSpecificString(listOfNames, functionArgument);
+                print(count);
             }else if(functionName.equals("CountAllStrings")){
-                this.operator.countAllStrings(listOfNames, Integer.parseInt(functionArgument));
+                countmap = this.operator.countAllStrings(listOfNames, Integer.parseInt(functionArgument));
+                print(countmap);
             }else if(functionName.equals("CountMaxString")){
-                this.operator.countMaxString(listOfNames,Integer.parseInt(functionArgument));
+                countList = this.operator.countMaxString(listOfNames,Integer.parseInt(functionArgument));
+                print(countList);
             }else if(functionName.equals("AllIncludesString")){
-                this.operator.allIncludesString(listOfNames, functionArgument);
+                countList = this.operator.allIncludesString(listOfNames, functionArgument);
+                print(countList);
             }
         }catch (Exception e){
             e.printStackTrace();
             throw e ;
+        }
+    }
+
+    private void print(ArrayList<String> answerList) {
+        for (String answer:
+             answerList) {
+            System.out.println(answer);
+        }
+    }
+
+    private void print(int count){
+        System.out.println(count);
+    }
+
+    private void print(HashMap<String, Integer> countMap){
+        Iterator<Map.Entry<String, Integer>> iterator = countMap.entrySet().iterator();
+        while(iterator.hasNext()){
+            Map.Entry<String, Integer> entry = iterator.next();
+            System.out.println(entry.getKey() + ":" + entry.getValue());
         }
     }
 
@@ -41,6 +67,7 @@ public class StringNamesService {
 
         return variable;
     }
+
 
 
     private void getListOfNames() {
